@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz game</title>
+</head>
+
+<body style="background-color: #bcbcbe;">
+
+    <!-- Seccion de peguntas -->
+    <section>
+        <h1>QUIZ DE PREGUNTAS</h1>
+        <p>Para este quiz tienes un lapso de 30 segundos antes de que el tiempo termine!</p>
+        <div style="display:flex; flex-direction:row; gap:3px;">
+            <h2>Tiempo restante:</h2>
+            <h2 id="timer">30</h2>
+        </div>
+        <hr><br>
+
+        <!--AUDIO-->
+        <audio id="audio" src="./audio/gameover.mp3"></audio>
+
+        <form id="form" action="#">
+            <label for="Q1">• ¿Cual es el pais mas pequeño del mundo?</label>
+            <input type="text" id="Q1" required><br><br>
+
+            <label for="Q2">• ¿Cual es la capital de Canada?</label>
+            <input type="text" id="Q2" required><br><br>
+
+            <label for="Q3">• ¿Cual es el material mas caro en el mundo?</label>
+            <input type="text" id="Q3" required><br><br>
+
+            <label for="Q4">• ¿Cuanto es 350+577?</label>
+            <input type="text" id="Q4" required><br><br>
+
+            <label for="Q5">• ¿Que presidente de los Estados Unidos ejecuto a Osama Bin Laden?</label>
+            <input type="text" id="Q5" required><br>
+
+            <button type="submit" id="submit">Enviar respuestas</button>
+            <button type="reset" id="reset">Reiniciar</button>
+        </form>
+    </section>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de usuario</title>
+</head>
+<body>
+    <p>Llena el siguiente campo: </p>
+    <input id="nombreUsuario" type="text" placeholder="Ingresa tu nombre">
+    <button onclick="saludarUsuario()">Saludar</button>
+
+    <script>
+        function saludarUsuario()
+        {
+            //Variable con let
+            let usuario = document.getElementById("nombreUsuario");
+            alert("Hola " + usuario.value);
+        }
+    </script>
+</body>
+</html>

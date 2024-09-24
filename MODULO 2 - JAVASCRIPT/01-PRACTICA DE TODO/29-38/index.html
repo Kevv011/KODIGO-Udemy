@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+
+    <style>
+        #textoCambiar {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body style="background-color: #d6d3d3;">
+
+    <!-- Seccion para setTimeout -->
+    <section>
+        <p><strong>ESTE TEXTO VA A CAMBIAR EN 3 SEG AL PRESIONAR EL BOTON:</strong></p>
+        <p id="textoCambiar">YO CAMBIO DE COLOR</p>
+        <button id="btnCambiar">Cambiar</button>
+        <button id="restablecer">Restablecer cambios</button>
+    </section>
+
+    <!-- Seccion para el audio -->
+    <section>
+        <audio id="audioAlarma" src="./audio/alarma.mp3" type="audio/mp3"></audio>
+    </section>
+
+    <!-- Seccion para la hora -->
+    <section>
+        <h2 id="hora">00:00:00</h2>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

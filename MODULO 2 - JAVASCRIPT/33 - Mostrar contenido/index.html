@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrando contenido de campos</title>
+</head>
+<body>
+    <input type="text" id="nombreUsuario" placeholder="Ingresa tu nombre">
+    <button onclick="mostrarNombre()">Ingresar</button>
+    <h2 id="salida">Nose aun tu nombre</h2>
+    
+    <script>
+        function mostrarNombre()
+        {
+            //Variable para el campo de entrada y zona de salida de informacion
+            let nombre = document.getElementById("nombreUsuario");
+            let texto = document.getElementById("salida");
+            let mensaje = "Tu te llamas " + nombre.value;
+
+            //Se usa "textContent" para cambiar el contenido del h2
+            texto.innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>

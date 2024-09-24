@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de audio</title>
+</head>
+<body>
+    
+    <input id="segundos" type="text" placeholder="Ingresa un numero">
+    <button class="aceptar" onclick="alarma()">Aceptar</button>
+    <button onclick="limpiar()">Limpiar</button>
+    <h2 id="estado" style="color:red">APAGADO</h2>
+
+    <audio id="audio" src="./Audio/alarma.mp3"></audio>
+
+    <script>
+        let segundos = document.getElementById("segundos");
+        let estado = document.getElementById("estado");
+        let audio = document.getElementById("audio");
+
+        function alarma()
+        {
+            setTimeout(tiempoCumplido, segundos.value * 1000);
+        }
+        function tiempoCumplido()
+        {
+            estado.style.color = "green";
+            estado.textContent = "ENCENDIDO";
+            audio.play();
+        }
+        function limpiar()
+        {
+            segundos.value = "";
+            estado.textContent = "APAGADO";
+            estado.style.color = "red";
+        }
+    </script>
+    
+</body>
+</html>

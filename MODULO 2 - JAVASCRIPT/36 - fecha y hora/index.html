@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora y fecha</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body onload="reloj()">  <!-- onload() sirve para que ciertas funciones se ejecuten porcada carga del HTML -->
+    
+    <input id="segundos" type="text" placeholder="Ingresa un numero">
+    <button class="aceptar" onclick="alarma()">Aceptar</button>
+    <button onclick="limpiar()">Limpiar</button>
+    <h2 id="hora" style="color:red">00:00:00</h2>
+
+    <audio id="audio" src="./Audio/alarma.mp3"></audio>
+
+    <script>
+        let segundos = document.getElementById("segundos");
+        let audio = document.getElementById("audio");
+
+        let hora = document.getElementById("hora"); //Obtiene el elemento con el id "hora" y sera donde empiece a mostrar la hora
+
+        function alarma()
+        {
+            setTimeout(tiempoCumplido, segundos.value * 1000);
+        }
+        function tiempoCumplido()
+        {
+            estado.style.color = "green";
+            audio.play();
+        }
+        function limpiar()
+        {
+            segundos.value = "";
+            estado.textContent = "APAGADO";
+            estado.style.color = "red";
+        }
+
+        //Funcion RELOJ
+        function reloj()
+        {
+            setInterval(ticTac, 1000);  //Manda a llamar la funcion ticTac cada segundo
+        }
+
+        //Funcion ticTac
+        function ticTac()
+        {
+            let tiempoActual = new Date();
+            let horas = String(tiempoActual.getHours()).padStart(2,"0");      //Obtiene la hora actual
+            let minutos = String(tiempoActual.getMinutes()).padStart(2,"0");  //Obtiene los minutos actuales
+            let segundos = String(tiempoActual.getSeconds()).padStart(2, "0"); //Obtiene los segundos actuales
+
+            let textoHora = "Hora actual: " + horas + ":" + minutos + ":" + segundos;
+            hora.textContent = textoHora;             //Gracias a esto se actualiza la hora en el HTML
+        }
+    </script>
+    
+</body>
+</html>
